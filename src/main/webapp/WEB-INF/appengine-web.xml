@@ -14,7 +14,7 @@
 <!-- [START config] -->
 <appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
   <application>vuclipdataflow-1301</application>
-  <version>201607</version>
+  <version>201608</version>
   <threadsafe>true</threadsafe>
 </appengine-web-app>
 <!-- [END config] -->
