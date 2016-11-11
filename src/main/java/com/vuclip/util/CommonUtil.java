@@ -49,7 +49,6 @@ public class CommonUtil {
         _logger.info(sql);
         JobConfigurationQuery copyConfig = new JobConfigurationQuery().setQuery(sql);
         copyConfig.setDestinationTable(destTable);
-        //copyConfig.setWriteDisposition("CREATE_IF_NEEDED");
         if(null != writeDisposition){
             copyConfig.setWriteDisposition(writeDisposition);
         }
@@ -59,6 +58,6 @@ public class CommonUtil {
         return bigquery.jobs().get(CommonUtil.projectId, jobExe.getJobReference().getJobId());
     }
     public static Bigquery.Jobs.Get selectInto(Bigquery bigquery,String sql,TableReference destTable) throws IOException{
-        return selectInto(bigquery,sql,destTable,"CREATE_IF_NEEDED");
+        return selectInto(bigquery,sql,destTable,"WRITE_APPEND");
     }
 }
